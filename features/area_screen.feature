@@ -1,12 +1,12 @@
 Feature: User is able to convert area units
 
-  Background:
-    Given I click on Got it button
+  #Background:
+    #Given I click on Got it button
 @test1
-  #Scenario: User is able to dismiss help
-  #Given I land on help popup
-  # When I click on Got it button
-  # Then I land on Area screen
+  Scenario: User is able to dismiss help
+  Given I land on help popup
+  When I click on Got it button
+  Then I land on Area screen
 @test2
   Scenario: User  is able to swap values
     Given I see "Sq Kilometre" in From header
@@ -26,11 +26,14 @@ Feature: User is able to convert area units
       |55     |55000000     |
       |22.2       |22200000             |
 
-  @wip
+  @test3
   Scenario: User is able to use soft keyboard to enter values
     Given I click on Clear button
     When I click on From field
-    And I press "3" on soft keyboard
-    Then  I get "<3000000>" in To field
-
-
+    And I press "35" on soft keyboard
+    Then  I get "35000000" in To field
+  @wip
+ Scenario:
+   When I select "Hectare" from left column
+   Then I see "Hectare" in From header
+   And I get "10000" in To field
